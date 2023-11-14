@@ -1,0 +1,19 @@
+---
+- name: Extract Minor Version
+  set_fact:
+    minor_version: "{{ ansible_distribution_version.split('.')[1] }}"
+    # minor_version: "{{ ansible_distribution_version | regex_replace('([0-9]+\\.[0-9]+).*', '\\1') }}"
+    # minor_version: " {{ ansible_distribution_version | regex_replace('([0-9]+\\.[0-9]+).*', '\\1') }} "
+    # minor_version: " {{ ansible_distribution_version | regex_replace('^[0-9]+.([0-9]+)[.[0-9]+]*', '\\g') }} "
+
+- name: Display Minor Version
+  debug:
+    var: minor_version
+    
+- name: Extract major Version
+  debug:
+    msg: "{{ ansible_distribution_major_version }}"
+
+- name: OS Version
+  debug:
+    msg: "{{ ansible_distribution }}"

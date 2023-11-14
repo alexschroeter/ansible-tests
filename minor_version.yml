@@ -1,0 +1,6 @@
+- name: Test Playbook
+  hosts:
+    - test
+  connection: local
+  roles:
+    - minor_version

@@ -1,0 +1,4 @@
+- name: Test a version filter
+  debug:
+    msg: " {{ ['3.4.5','6.1'] | list | select('version', '5.5', '<') | list }} "
+    #msg: " {{ ['3.4.5','6.1'] | list | selectattr | ansible.builtin.version('<=', '5.5') }} "
